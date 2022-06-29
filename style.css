@@ -36,6 +36,14 @@ button {
   box-shadow: 2px 5px 5px #333;
 }
 
+#list > ul > li {
+  margin-top: 10%;
+}
+
 #list > ul > li > button {
   margin-left: 10px;
+}
+
+#list > ul > li > form {
+  float: right;
 }
