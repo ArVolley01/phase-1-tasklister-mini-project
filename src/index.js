@@ -22,7 +22,6 @@ document.addEventListener("DOMContentLoaded", () => {
     task.addEventListener('click', clickToEdit(task));
     task.addEventListener('mouseleave', () => {
       task.contentEditable = false;
-      console.log(task);
       if (task.textContent === "") {
         outerTask.remove();
       }
