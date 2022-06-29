@@ -1,7 +1,7 @@
 priorities = ['emergency','high','medium','low'];
 
 document.addEventListener("DOMContentLoaded", () => {
-  const subForm = document.getElementById("create-task-form");
+  const subForm = document.getElementById("create-task-form");  
 
   priorities.map((priority) => {
     const marker = document.createElement('div');
@@ -11,14 +11,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
   subForm.addEventListener('submit', (event) => {
     event.preventDefault();
-    event.stopPropagation()
+
     const text = document.getElementById("new-task-description");
+    const text_date = document.getElementById("task-date");
+
     if (text.value === "") {
       return;
     };
+
     const outerTask = document.createElement('li');
     const task = document.createElement('p');
-    task.textContent = text.value;
+
+    if (text_date.value === "") {
+      task.textContent = text.value;
+    } else {
+      task.textContent = text.value + " Due: " + text_date.value;
+    };
+
     task.addEventListener('click', clickToEdit(task));
     task.addEventListener('mouseleave', () => {
       task.contentEditable = false;
@@ -28,8 +37,15 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     outerTask.append(task, getDropdown(outerTask),getDeleteButton(outerTask));
     document.getElementById(priorities[0]).append(outerTask);
+
     document.getElementById("new-task-description").value = "";
   });
+
+  const flip = document.createElement('button');
+  flip.addEventListener('click', () => {
+    document.getElementById("tasks").reversed = !document.getElementById("tasks").reversed;
+  });
+  document.body.append(flip);
 
 });
 
@@ -64,3 +80,4 @@ function clickToEdit(task) {
     task.contentEditable = true;
   };
 }
+
