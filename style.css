@@ -36,36 +36,29 @@ button {
   box-shadow: 2px 5px 5px #333;
 }
 
-#tasks > div > li {
-  margin-top: 10%;
-}
-
-#tasks > div > li > button {
-  margin-left: 10px;
-}
-
-#tasks > div > li > form {
-  margin-left: 10px;
+#tasks > div > li > p {
+  margin-bottom: 1%;
 }
 
 /* 
-DOES NOT WORK ON MY CHROME */
+DOES NOT WORK ON MY CHROME
 ol li::marker {
   color:black !important;
 }
+*/
 
-#emergency > li {
+#emergency > li > p {
   color: red;
 }
 
-#high > li {
+#high > li > p {
   color: blue;
 }
 
-#medium > li {
+#medium > li > p {
   color: green;
 }
 
-#low > li {
+#low > li > p {
   color: gray;
 }
