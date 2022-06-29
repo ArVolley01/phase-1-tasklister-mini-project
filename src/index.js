@@ -13,11 +13,20 @@ document.addEventListener("DOMContentLoaded", () => {
     event.preventDefault();
     event.stopPropagation()
     const text = document.getElementById("new-task-description");
+    if (text.value === "") {
+      return;
+    };
     const outerTask = document.createElement('li');
     const task = document.createElement('p');
     task.textContent = text.value;
     task.addEventListener('click', clickToEdit(task));
-    task.addEventListener('mouseleave', () => {task.contentEditable = false});
+    task.addEventListener('mouseleave', () => {
+      task.contentEditable = false;
+      console.log(task);
+      if (task.textContent === "") {
+        outerTask.remove();
+      }
+    });
     outerTask.append(task, getDropdown(outerTask),getDeleteButton(outerTask));
     document.getElementById(priorities[0]).append(outerTask);
     document.getElementById("new-task-description").value = "";
@@ -54,6 +63,5 @@ function clickToEdit(task) {
   return function() {
     console.log('here');
     task.contentEditable = true;
-    //setTimeout(() => {task.contentEditable = false}, 5000);
   };
 }
