@@ -36,15 +36,36 @@ button {
   box-shadow: 2px 5px 5px #333;
 }
 
-#list > ol > li {
+#tasks > div > li {
   margin-top: 10%;
 }
 
-#list > ol > li > button {
+#tasks > div > li > button {
   margin-left: 10px;
 }
 
-#list > ol > li > form {
+#tasks > div > li > form {
   margin-left: 10px;
-  float: inline-end;
+}
+
+/* 
+DOES NOT WORK ON MY CHROME */
+ol li::marker {
+  color:black !important;
+}
+
+#emergency > li {
+  color: red;
+}
+
+#high > li {
+  color: blue;
+}
+
+#medium > li {
+  color: green;
+}
+
+#low > li {
+  color: gray;
 }

@@ -19,6 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
     task.append(getDropdown(task));
     task.append(getDeleteButton(task));
     document.getElementById(priorities[0]).append(task);
+    document.getElementById("new-task-description").value = "";
   });
 
 });
