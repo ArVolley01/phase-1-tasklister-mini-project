@@ -2,7 +2,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const subForm = document.getElementById("create-task-form");
   subForm.addEventListener('submit', (event) => {
     event.preventDefault();
-    alert('here');
   }, false);
 
   subForm.addEventListener('submit', () => {
