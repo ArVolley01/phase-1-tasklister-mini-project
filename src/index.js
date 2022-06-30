@@ -42,6 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   const flip = document.createElement('button');
+  flip.setAttribute();
   flip.addEventListener('click', () => {
     document.getElementById("tasks").reversed = !document.getElementById("tasks").reversed;
   });
